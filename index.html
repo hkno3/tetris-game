@@ -19,11 +19,11 @@
         
         .game-container {
             display: flex;
-            gap: 30px;
+            gap: 25px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
+            border-radius: 18px;
+            padding: 25px;
             box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
             border: 1px solid rgba(255, 255, 255, 0.18);
         }
@@ -35,8 +35,8 @@
         }
         
         h1 {
-            margin: 0 0 20px 0;
-            font-size: 2.5em;
+            margin: 0 0 15px 0;
+            font-size: 2.2em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             text-align: center;
         }
@@ -51,20 +51,20 @@
         .info-panel {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            min-width: 200px;
+            gap: 18px;
+            min-width: 180px;
         }
         
         .score-board {
             background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 15px;
+            padding: 18px;
+            border-radius: 13px;
             text-align: center;
         }
         
         .score-item {
-            margin: 10px 0;
-            font-size: 1.2em;
+            margin: 8px 0;
+            font-size: 1.1em;
         }
         
         .score-value {
@@ -74,35 +74,35 @@
         
         .controls {
             background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 15px;
+            padding: 18px;
+            border-radius: 13px;
         }
         
         .controls h3 {
-            margin: 0 0 15px 0;
+            margin: 0 0 13px 0;
             text-align: center;
         }
         
         .control-item {
-            margin: 8px 0;
-            font-size: 0.9em;
+            margin: 7px 0;
+            font-size: 0.8em;
         }
         
         .touch-controls {
             display: grid;
-            grid-template-columns: repeat(4, 60px);
-            grid-template-rows: repeat(3, 50px);
-            gap: 8px;
+            grid-template-columns: repeat(4, 54px);
+            grid-template-rows: repeat(3, 45px);
+            gap: 7px;
             justify-content: center;
-            margin: 20px 0;
+            margin: 18px 0;
         }
         
         .control-btn {
             background: rgba(255, 255, 255, 0.2);
             border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
+            border-radius: 9px;
             color: white;
-            font-size: 1.2em;
+            font-size: 1.1em;
             cursor: pointer;
             transition: all 0.2s ease;
             user-select: none;
@@ -129,8 +129,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background: rgba(0, 0, 0, 0.9);
-            padding: 40px;
-            border-radius: 20px;
+            padding: 36px;
+            border-radius: 18px;
             text-align: center;
             display: none;
             border: 2px solid rgba(255, 255, 255, 0.3);
@@ -141,11 +141,11 @@
             background: linear-gradient(45deg, #ff6b6b, #ee5a24);
             border: none;
             color: white;
-            padding: 12px 24px;
-            font-size: 1.1em;
-            border-radius: 25px;
+            padding: 11px 22px;
+            font-size: 1em;
+            border-radius: 22px;
             cursor: pointer;
-            margin: 10px;
+            margin: 9px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(238, 90, 36, 0.4);
         }
@@ -158,17 +158,22 @@
         @media (max-width: 800px) {
             .game-container {
                 flex-direction: column;
-                padding: 20px;
-                margin: 10px;
+                padding: 18px;
+                margin: 9px;
             }
             
             canvas {
-                width: 300px;
-                height: 600px;
+                width: 270px;
+                height: 540px;
             }
             
             h1 {
-                font-size: 2em;
+                font-size: 1.8em;
+            }
+            
+            .touch-controls {
+                grid-template-columns: repeat(4, 50px);
+                grid-template-rows: repeat(3, 40px);
             }
         }
     </style>
@@ -177,7 +182,7 @@
     <div class="game-container">
         <div class="game-board">
             <h1>🧩 테트리스</h1>
-            <canvas id="gameCanvas" width="300" height="600"></canvas>
+            <canvas id="gameCanvas" width="270" height="540"></canvas>
             
             <div class="touch-controls">
                 <div class="control-btn rotate-btn">↻</div>
@@ -226,7 +231,7 @@
 
         const BOARD_WIDTH = 10;
         const BOARD_HEIGHT = 20;
-        const BLOCK_SIZE = 30;
+        const BLOCK_SIZE = 27; // 30에서 27로 10% 축소
 
         // 테트리스 조각들
         const PIECES = [
